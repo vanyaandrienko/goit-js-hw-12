@@ -65,7 +65,10 @@ export function renderGallery(images) {
   gallery.insertAdjacentHTML("beforeend", markup);
 
   if (!lightbox) {
-    lightbox = new SimpleLightbox(".gallery a");
+    lightbox = new SimpleLightbox(".gallery-item", {
+      captionsData: "alt",
+      captionDelay: 250,
+    });
   } else {
     lightbox.refresh();
   }
